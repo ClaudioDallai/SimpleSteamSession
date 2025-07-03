@@ -98,7 +98,7 @@ fabric.properties
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+!Plugins/PNetworking/Source/**/.dll
 
 # Fortran module files
 *.mod
