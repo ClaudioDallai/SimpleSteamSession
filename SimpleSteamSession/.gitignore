@@ -11,6 +11,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -106,7 +107,6 @@ fabric.properties
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
