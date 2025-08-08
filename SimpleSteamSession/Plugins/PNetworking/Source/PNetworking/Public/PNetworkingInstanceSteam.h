@@ -196,11 +196,12 @@ public:
 	/// <summary>
 	/// Update current session parameters. Ensure to be Authority.
 	/// </summary>
+	/// <param name="Requester"> Requester (Actor) whose autority is checked. </param>
 	/// <param name="SessionParameters"> Session parameters. </param>
 	/// <param name="Callback"> Callback invoked when update is finished. </param>
 	/// <returns> Returns True if parameters request was successfull. </returns>
 	UFUNCTION(BlueprintCallable, Category = "Online Subsystem Session functions")
-	bool UpdateSessionParameters_AuthorityOnly(const FUpdateSessionParameters& SessionParameters, const FOnSessionParametersUpdateReady& Callback);
+	bool UpdateSessionParameters_AuthorityOnly(const AActor* Requester, const FUpdateSessionParameters& SessionParameters, const FOnSessionParametersUpdateReady& Callback);
 	
 	/// <summary>
 	/// Check is session is valid and joinable. 
