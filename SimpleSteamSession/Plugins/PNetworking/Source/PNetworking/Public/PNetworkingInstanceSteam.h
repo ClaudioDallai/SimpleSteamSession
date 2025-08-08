@@ -196,6 +196,7 @@ public:
 	/// <summary>
 	/// Update current session parameters. Ensure to be Authority.
 	/// </summary>
+	/// <param name="Requester"> Requester (Actor) whose autority is checked. </param>
 	/// <param name="SessionParameters"> Session parameters. </param>
 	/// <param name="Callback"> Callback invoked when update is finished. </param>
 	/// <returns> Returns True if parameters request was successfull. </returns>
