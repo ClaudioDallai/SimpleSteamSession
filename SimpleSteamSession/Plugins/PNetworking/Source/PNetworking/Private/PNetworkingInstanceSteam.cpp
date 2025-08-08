@@ -380,12 +380,24 @@ bool UPNetworkingInstanceSteam::GetSessionParameters(FGetSessionParameters& Sess
 	return true;
 }
 
-bool UPNetworkingInstanceSteam::UpdateSessionParameters_AuthorityOnly(const FUpdateSessionParameters& SessionParameters, const FOnSessionParametersUpdateReady& Callback)
+bool UPNetworkingInstanceSteam::UpdateSessionParameters_AuthorityOnly(const AActor* Requester, const FUpdateSessionParameters& SessionParameters, const FOnSessionParametersUpdateReady& Callback)
 {
 	IOnlineSessionPtr OnlineSession = FPNetworkingModule::GetOnlineSessionPointer();
 	if (!OnlineSession.IsValid())
 	{
 		UE_LOG(LogSteamNetworkingPlugin, Error, TEXT("UpdateSessionParameters_AuthorityOnly: OnlineSession is null!"));
+		return false;
+	}
+
+	if (!Requester) 
+	{
+		UE_LOG(LogSteamNetworkingPlugin, Error, TEXT("UpdateSessionParameters_AuthorityOnly: Requester is null!"));
+		return false;
+	}
+
+	if (!Requester->HasAuthority())
+	{
+		UE_LOG(LogSteamNetworkingPlugin, Warning, TEXT("UpdateSessionParameters_AuthorityOnly: Requester has no Autority!"));
 		return false;
 	}
 
