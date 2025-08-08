@@ -4,6 +4,7 @@
 
 void USimpleSteamSessionGameInstance::Init()
 {
+	Super::Init();
 	UniqueSteamSessionInstance = UPNetworkingInstanceSteam::GetUniqueInstance();
 }
 
