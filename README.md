@@ -6,12 +6,13 @@ SimpleSteamSession is an Unreal Engine 5 plugin that allows you to connect and e
 - Project example includes: "Main menu" where you can create a lobby, "Main game map" that includes a "Pause menu" (pressing P). <br> During pause, you can invite friends, open and close the lobby joinability only if you are the host.
 - You can check blueprints implementation inside "WBP_PauseMenu" widget, "BP_SimpleSessionGameInstance" game instance and all other assets used. C++ code is also completely available and documented.
 
-This plugin is inspired by <i>Advanced Steam Session</i> plugin: https://github.com/mordentral/AdvancedSessionsPlugin. <br>
+This plugin is inspired by <i>Advanced Session</i> plugin: https://github.com/mordentral/AdvancedSessionsPlugin. <br>
 
 ## Setup (using this plugin in personal projects)
 - Download this project and unzip it (beware this repo includes an example project and the plugin)
 - Copy or move "../SimpleSteamSession/Plugins/PNetworking" folder into "Plugins" folder in your project or your engine, if not present you must create it (the name must be "Plugins")
-- Modify your "DefaultEngine.ini" file adding this prompt if not existing, only in your personal projects:
+- Rebuild your project
+- Modify your "DefaultEngine.ini" file ("Config/DefaultEngine.ini") adding this prompt if not existing, only in your personal projects:
 ```
 /Script/Engine.GameEngine]
 +NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="OnlineSubsystemSteam.SteamNetDriver",DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")
@@ -36,5 +37,6 @@ NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
 - More docs: https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine
 
 ## Compatibility and usage
+- Remember to keep opened the Steam Client in order to connect to the Steam backend, when you start to play your game
 - Because of OSS (Online Subsystem Steam) does not include all SteamWorks API, to access avatars we imported "SteamWorks API" under Steam folder: "Plugins/PNetworking/Source/PNetworking/Public/steam"
-- This APIs are public, and compatible until UE 5.4.X. In order to use a newer version of SteamWorks API, if necessary, check here: <br> https://partner.steamgames.com/doc/home and replace all .dll files, but keep the "lib" folder
+- This APIs are public, and compatible until UE 5.4.X version. In order to use a newer version of SteamWorks API, if necessary, check here: <br> https://partner.steamgames.com/doc/home and replace all .dll files, but keep the "lib" folder
