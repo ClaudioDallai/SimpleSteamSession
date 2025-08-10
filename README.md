@@ -39,4 +39,4 @@ NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
 ## Compatibility and usage
 - Remember to keep opened the Steam Client in order to connect to the Steam backend, when you start to play your game
 - Because of OSS (Online Subsystem Steam) does not include all SteamWorks API, to access avatars we imported "SteamWorks API" under Steam folder: "Plugins/PNetworking/Source/PNetworking/Public/steam"
-- This APIs are public, and compatible until UE 5.4.X version. In order to use a newer version of SteamWorks API, if necessary, check here: <br> https://partner.steamgames.com/doc/home and replace all .dll files, but keep the "lib" folder
+- This APIs are public, and compatible until UE 5.4.X version. In order to use a newer version of SteamWorks API, if necessary, check here: https://partner.steamgames.com/doc/home and replace all .dll files, but keep the "lib" folder
